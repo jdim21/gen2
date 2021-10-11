@@ -215,14 +215,14 @@ const isWinner = (fairLaunch: FairLaunchAccount | undefined): boolean => {
     return false;
   }
 
-  const myByte =
-    fairLaunch.lottery.data[
-      FAIR_LAUNCH_LOTTERY_SIZE +
-        Math.floor(fairLaunch.ticket.data?.seq.toNumber() / 8)
-    ];
+  // const myByte =
+  //   fairLaunch.lottery.data[
+  //     FAIR_LAUNCH_LOTTERY_SIZE +
+  //       Math.floor(fairLaunch.ticket.data?.seq.toNumber() / 8)
+  //   ];
 
   const positionFromRight = 7 - (fairLaunch.ticket.data?.seq.toNumber() % 8);
-  const mask = Math.pow(2, positionFromRight);
+  // const mask = Math.pow(2, positionFromRight);
   // const isWinner = myByte & mask;
   return 1 > 0;
 };
