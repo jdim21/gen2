@@ -199,11 +199,11 @@ export interface HomeProps {
   txTimeout: number;
 }
 
-const FAIR_LAUNCH_LOTTERY_SIZE =
-  8 + // discriminator
-  32 + // fair launch
-  1 + // bump
-  8; // size of bitmask ones
+// const FAIR_LAUNCH_LOTTERY_SIZE =
+//   8 + // discriminator
+//   32 + // fair launch
+//   1 + // bump
+//   8; // size of bitmask ones
 
 const isWinner = (fairLaunch: FairLaunchAccount | undefined): boolean => {
   if (
@@ -221,7 +221,7 @@ const isWinner = (fairLaunch: FairLaunchAccount | undefined): boolean => {
   //       Math.floor(fairLaunch.ticket.data?.seq.toNumber() / 8)
   //   ];
 
-  const positionFromRight = 7 - (fairLaunch.ticket.data?.seq.toNumber() % 8);
+  // const positionFromRight = 7 - (fairLaunch.ticket.data?.seq.toNumber() % 8);
   // const mask = Math.pow(2, positionFromRight);
   // const isWinner = myByte & mask;
   return 1 > 0;
