@@ -163,12 +163,12 @@ function getPhase(
   fairLaunch: FairLaunchAccount | undefined,
   candyMachine: CandyMachineAccount | undefined,
 ): Phase {
-  const curr = new Date().getTime();
+  // const curr = new Date().getTime();
 
-  const phaseOne = toDate(fairLaunch?.state.data.phaseOneStart)?.getTime();
-  const phaseOneEnd = toDate(fairLaunch?.state.data.phaseOneEnd)?.getTime();
-  const phaseTwoEnd = toDate(fairLaunch?.state.data.phaseTwoEnd)?.getTime();
-  const candyMachineGoLive = toDate(candyMachine?.state.goLiveDate)?.getTime();
+  // const phaseOne = toDate(fairLaunch?.state.data.phaseOneStart)?.getTime();
+  // const phaseOneEnd = toDate(fairLaunch?.state.data.phaseOneEnd)?.getTime();
+  // const phaseTwoEnd = toDate(fairLaunch?.state.data.phaseTwoEnd)?.getTime();
+  // const candyMachineGoLive = toDate(candyMachine?.state.goLiveDate)?.getTime();
 /*
   if (phaseOne && curr < phaseOne) {
     return Phase.Phase0;
@@ -223,7 +223,7 @@ const isWinner = (fairLaunch: FairLaunchAccount | undefined): boolean => {
 
   const positionFromRight = 7 - (fairLaunch.ticket.data?.seq.toNumber() % 8);
   const mask = Math.pow(2, positionFromRight);
-  const isWinner = myByte & mask;
+  // const isWinner = myByte & mask;
   return 1 > 0;
 };
 
