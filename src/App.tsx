@@ -21,33 +21,7 @@ import {
 
 import { WalletDialogProvider } from '@solana/wallet-adapter-material-ui';
 import { ThemeProvider, createTheme } from '@material-ui/core';
-import { Layout, Button } from 'antd';
-import React from 'react';
-
-import {
-  CACHE_PATH, 
-  FAIR_LAUNCH_PROGRAM_ID,
-  TOKEN_METADATA_PROGRAM_ID,
-  TOKEN_PROGRAM_ID,
-} from './helpers/constants';
-import {
-  loadFairLaunchProgram,
-  loadWalletKey,
-  getTokenMint,
-  getFairLaunch,
-  getTreasury,
-  getFairLaunchTicket,
-  getAtaForMint,
-  getFairLaunchTicketSeqLookup,
-  getFairLaunchLotteryBitmap,
-  getMetadata,
-  getParticipationMint,
-  getParticipationToken,
-  getMasterEdition,
-  getEditionMarkPda,
-} from './helpers/accounts';
-import { Provider, Program, web3, BN} from '@project-serum/anchor';
-import { Connection, LAMPORTS_PER_SOL, PublicKey, SystemProgram, SYSVAR_CLOCK_PUBKEY, SYSVAR_RENT_PUBKEY, TransactionInstruction, Keypair } from '@solana/web3.js';
+import { PublicKey } from '@solana/web3.js';
 
 const theme = createTheme({
   palette: {
