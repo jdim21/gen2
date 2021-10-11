@@ -160,9 +160,9 @@ export const getCandyMachineState = async (
       isActive: true,
       goLiveDate: state.data.goLiveDate,
       treasury: state.wallet,
-      tokenMint: new anchor.web3.PublicKey("8HGyAAB1yoM1ttS7pXjHMa3dukTFGQggnFFH3hJZgzQh"),
+      tokenMint: new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
       config: state.config,
-      price: new anchor.BN(10000000),
+      price: new anchor.BN(1),
     },
   };
 };
@@ -209,7 +209,7 @@ export const mintOneToken = async (
   )[0];
 
   const userPayingAccountAddress = (
-    await getAtaForMint(new anchor.web3.PublicKey("8HGyAAB1yoM1ttS7pXjHMa3dukTFGQggnFFH3hJZgzQh"), payer)
+    await getAtaForMint(new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"), payer)
   )[0];
 
   const candyMachineAddress = candyMachine.id;
@@ -251,7 +251,7 @@ export const mintOneToken = async (
   ];
 
   let tokenAccount;
-  if (new anchor.web3.PublicKey("8HGyAAB1yoM1ttS7pXjHMa3dukTFGQggnFFH3hJZgzQh")) {
+  if (new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP")) {
     const transferAuthority = anchor.web3.Keypair.generate();
 
     signers.push(transferAuthority);

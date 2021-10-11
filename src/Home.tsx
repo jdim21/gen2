@@ -188,7 +188,7 @@ function getPhase(
     return Phase.Phase4;
   }
 */
-  return Phase.Phase0;
+  return Phase.Phase4;
 }
 
 export interface HomeProps {
@@ -407,7 +407,7 @@ const Home = (props: HomeProps) => {
   const marks = [
     {
       value: min || 0,
-      label: `${min} COPE`,
+      label: `${min} Voucher`,
     },
     // TODO:L
     {
@@ -421,7 +421,7 @@ const Home = (props: HomeProps) => {
     // },
     {
       value: max || 0,
-      label: `${max} COPE`,
+      label: `${max} Voucher`,
     },
   ].filter(_ => _ !== undefined && _.value !== 0) as any;
 
@@ -581,7 +581,7 @@ const Home = (props: HomeProps) => {
 
             {phase === Phase.Lottery && (
               <Header
-                phaseName={'C◎PETree'}
+                phaseName={'Gen-2 Doge'}
                 desc={'Raffle in progress'}
                 date={fairLaunch?.state.data.phaseTwoEnd.add(
                   fairLaunch?.state.data.lotteryDuration,
@@ -591,7 +591,7 @@ const Home = (props: HomeProps) => {
 
             {phase === Phase.Phase3 && !candyMachine && (
               <Header
-                phaseName={'C◎PETree'}
+                phaseName={'Gen-2 Doge'}
                 desc={'Raffle finished!'}
                 date={fairLaunch?.state.data.phaseTwoEnd}
               />
@@ -599,7 +599,7 @@ const Home = (props: HomeProps) => {
 
             {phase === Phase.Phase3 && candyMachine && (
               <Header
-                phaseName={'C◎PETree'}
+                phaseName={'Gen-2 Doge'}
                 desc={'Minting starts in...'}
                 date={candyMachine?.state.goLiveDate}
               />
@@ -608,9 +608,9 @@ const Home = (props: HomeProps) => {
             {phase === Phase.Phase4 && (
               <Header
                 phaseName={
-                  candyMachinePredatesFairLaunch ? 'C◎PETree' : 'C◎PETree'
+                  candyMachinePredatesFairLaunch ? 'Gen-2 Doge' : 'Gen-2 Doge'
                 }
-                desc={'Mint Your C◎PETree 🍬'}
+                desc={'Mint Gen-2 Doge 🍬'}
                 date={candyMachine?.state.goLiveDate}
                 status="LIVE"
               />
@@ -632,12 +632,12 @@ const Home = (props: HomeProps) => {
               >
                 {(
                   <>
-                    <Typography>Cost For 1 C◎PETree</Typography>
+                    <Typography>Cost For 1 Gen 2 Doge</Typography>
                     <Typography variant="h6" style={{ fontWeight: 900 }}>
                       {formatNumber.format(
-                        25,
+                        1,
                       )}{' '}
-                      COPE
+                      Voucher Token (Mint TBD)
                     </Typography>
                   </>
                 )}
@@ -985,7 +985,7 @@ const Home = (props: HomeProps) => {
                 {candyMachinePredatesFairLaunch ? (
                   <>
                     <Typography variant="h6">
-                      C◎PETree - The Candy Machine:
+                      Gen-2 Doge - The Candy Machine:
                     </Typography>
                     <Typography gutterBottom color="textSecondary">
                       Everyone who got a raffle ticket at the fair price is
@@ -996,7 +996,7 @@ const Home = (props: HomeProps) => {
                   </>
                 ) : (
                   <>
-                    <Typography variant="h6">C◎PETree - The Lottery:</Typography>
+                    <Typography variant="h6">Gen-2 Doge - The Lottery:</Typography>
                     <Typography gutterBottom color="textSecondary">
                       Everyone who got a raffle ticket at the fair price is
                       entered to win a Fair Launch Token that entitles them to
@@ -1064,7 +1064,7 @@ const Home = (props: HomeProps) => {
                   color="textPrimary"
                   style={{ fontWeight: 'bold' }}
                 >
-                  10000
+                  2500
                 </Typography>
               </Grid>
               <Grid container md={4} direction="column">
@@ -1078,8 +1078,8 @@ const Home = (props: HomeProps) => {
                 >
                   {' '}
                   {formatNumber.format(
-                    25,
-                  )} COPE
+                    1,
+                  )} Voucher
                 </Typography>
               </Grid>
             </Grid>
