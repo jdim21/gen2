@@ -267,7 +267,7 @@ const Home = (props: HomeProps) => {
 
   const onMint = async () => {
     try {
-      setIsMinting(true);
+      // setIsMinting(true);
       if (wallet.connected && candyMachine?.program && wallet.publicKey) {
         if (fairLaunch?.ticket.data?.state.unpunched && isWinner(fairLaunch)) {
           await onPunchTicket();
@@ -599,7 +599,7 @@ const Home = (props: HomeProps) => {
 
             {phase === Phase.Phase3 && candyMachine && (
               <Header
-                phaseName={'Gen-2 Doge'}
+                phaseName={'Gen-2 Solana Doge'}
                 desc={'Minting starts in...'}
                 date={candyMachine?.state.goLiveDate}
               />
@@ -610,7 +610,7 @@ const Home = (props: HomeProps) => {
                 phaseName={
                   candyMachinePredatesFairLaunch ? 'Gen-2 Doge' : 'Gen-2 Doge'
                 }
-                desc={'Mint Gen-2 Doge 🍬'}
+                desc={'Mint using Voucher 🍬'}
                 date={candyMachine?.state.goLiveDate}
                 status="LIVE"
               />
@@ -632,12 +632,16 @@ const Home = (props: HomeProps) => {
               >
                 {(
                   <>
-                    <Typography>Cost For 1 Gen 2 Doge</Typography>
-                    <Typography variant="h6" style={{ fontWeight: 900 }}>
+                    <Typography>Cost is 1 token of mint type:</Typography>
+                    {/* <Typography variant="h6" style={{ fontWeight: 700, fontSize:"0.75rem" }}>
                       {formatNumber.format(
                         1,
-                      )}{' '}
-                      Voucher Token (Mint TBD)
+                      )}{' '} */}
+                    <Typography style={{ fontWeight: 700, fontSize:"0.75rem"}}>
+                      DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1
+                    </Typography>
+                    <Typography style={{ fontWeight: 700, fontSize:"0.75rem"}}>
+                      Visit <a href='https://SolanaDogeNFTs.io'>SolanaDogeNFTs</a> for more details
                     </Typography>
                   </>
                 )}
@@ -1045,14 +1049,14 @@ const Home = (props: HomeProps) => {
             <Grid container direction="row" wrap="nowrap">
               <Grid container md={4} direction="column">
                 <Typography variant="body2" color="textSecondary">
-                  # Sold
+                  # Remaining
                 </Typography>
                 <Typography
                   variant="h6"
                   color="textPrimary"
                   style={{ fontWeight: 'bold' }}
                 >
-                  0
+                  {candyMachine?.state.itemsRemaining}
                 </Typography>
               </Grid>
               <Grid container md={4} direction="column">
@@ -1079,7 +1083,7 @@ const Home = (props: HomeProps) => {
                   {' '}
                   {formatNumber.format(
                     1,
-                  )} Voucher
+                  )} DoGe..8wE1 
                 </Typography>
               </Grid>
             </Grid>
