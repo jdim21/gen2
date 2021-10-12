@@ -638,7 +638,7 @@ const Home = (props: HomeProps) => {
                         1,
                       )}{' '} */}
                     <Typography style={{ fontWeight: 700, fontSize:"0.75rem"}}>
-                      DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1
+                      DogEFgc5QGpuAqRYej8UzPkLoNsDCFfwT5ShsB8LnkDE
                     </Typography>
                     <Typography style={{ fontWeight: 700, fontSize:"0.75rem"}}>
                       Visit <a href='https://SolanaDogeNFTs.io'>SolanaDogeNFTs</a> for more details
@@ -1083,7 +1083,7 @@ const Home = (props: HomeProps) => {
                   {' '}
                   {formatNumber.format(
                     1,
-                  )} DoGe..8wE1 
+                  )} DogE..nkDE
                 </Typography>
               </Grid>
             </Grid>
