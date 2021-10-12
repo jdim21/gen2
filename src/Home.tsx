@@ -1083,7 +1083,7 @@ const Home = (props: HomeProps) => {
                   {' '}
                   {formatNumber.format(
                     1,
-                  )} DoGe..8wE1 
+                  )} DoGe..8wE1
                 </Typography>
               </Grid>
             </Grid>
