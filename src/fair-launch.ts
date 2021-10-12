@@ -123,7 +123,7 @@ export const getFairLaunchState = async (
 
   const [fairLaunchTicket, bump] = await getFairLaunchTicket(
     //@ts-ignore
-    new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+    new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
     anchorWallet.publicKey,
   );
 
@@ -143,7 +143,7 @@ export const getFairLaunchState = async (
   let fairLaunchLotteryBitmap = (
     await getFairLaunchLotteryBitmap(
       //@ts-ignore
-      new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+      new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
     )
   )[0];
 
@@ -181,7 +181,7 @@ export const punchTicket = async (
   const fairLaunchTicket = (
     await getFairLaunchTicket(
       //@ts-ignore
-      new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+      new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
       anchorWallet.publicKey,
     )
   )[0];
@@ -189,12 +189,12 @@ export const punchTicket = async (
   const ticket = fairLaunch.ticket.data;
 
   const fairLaunchLotteryBitmap = //@ts-ignore
-  (await getFairLaunchLotteryBitmap(new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP")))[0];
+  (await getFairLaunchLotteryBitmap(new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1")))[0];
 
   const buyerTokenAccount = (
     await getAtaForMint(
       //@ts-ignore
-      new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+      new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
       anchorWallet.publicKey,
     )
   )[0];
@@ -249,7 +249,7 @@ export const punchTicket = async (
           anchorWallet.publicKey,
           anchorWallet.publicKey,
           //@ts-ignore
-          new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+          new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
         ),
       ]
     : [];
@@ -262,7 +262,7 @@ export const punchTicket = async (
       payer: anchorWallet.publicKey,
       buyerTokenAccount,
       //@ts-ignore
-      tokenMint: new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+      tokenMint: new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
       tokenProgram: TOKEN_PROGRAM_ID,
     },
     instructions: instructions.length > 0 ? instructions : undefined,
@@ -389,7 +389,7 @@ const getSetupForTicketing = async (
   if (ticket.data) {
     const [fairLaunchTicketSeqLookup, seqBump] =
       await getFairLaunchTicketSeqLookup(
-        new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+        new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
         ticket.data?.seq,
       );
 
@@ -430,7 +430,7 @@ export const receiveRefund = async (
   }
 
   const buyerTokenAccount = (
-    await getAtaForMint(new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"), anchorWallet.publicKey)
+    await getAtaForMint(new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"), anchorWallet.publicKey)
   )[0];
 
   const transferAuthority = anchor.web3.Keypair.generate();
@@ -480,7 +480,7 @@ export const receiveRefund = async (
       buyer: anchorWallet.publicKey,
       buyerTokenAccount,
       transferAuthority: transferAuthority.publicKey,
-      tokenMint: new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+      tokenMint: new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
       tokenProgram: TOKEN_PROGRAM_ID,
       systemProgram: anchor.web3.SystemProgram.programId,
       clock: anchor.web3.SYSVAR_CLOCK_PUBKEY,
@@ -505,7 +505,7 @@ export const purchaseTicket = async (
 
   const [fairLaunchTicket, bump] = await getFairLaunchTicket(
     //@ts-ignore
-    new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+    new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
     anchorWallet.publicKey,
   );
 
@@ -520,7 +520,7 @@ export const purchaseTicket = async (
 
   if (ticket) {
     const fairLaunchLotteryBitmap = ( //@ts-ignore
-      await getFairLaunchLotteryBitmap(new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"))
+      await getFairLaunchLotteryBitmap(new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"))
     )[0];
     console.log(
       'Anchor wallet',
@@ -626,7 +626,7 @@ export const withdrawFunds = async (
       treasury: fairLaunch.state.treasury,
       authority: anchorWallet.publicKey,
       // @ts-ignore
-      tokenMint: new anchor.web3.PublicKey("BmpKnjHggM1UcRDSsREnL7g4d9shtRChaNhZsYhbeyEP"),
+      tokenMint: new anchor.web3.PublicKey("DoGerZMpWFAJFvVZFqn87D2pPp3CydNAqb4CrZe38wE1"),
       systemProgram: anchor.web3.SystemProgram.programId,
     },
     remainingAccounts,
